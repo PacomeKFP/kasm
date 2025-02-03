@@ -1,0 +1,37 @@
+<!-- static/img/code-illustration.svg -->
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 600"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-code"
+>
+    <!-- Fond de l'écran -->
+    <rect x="50" y="50" width="700" height="400" rx="20" ry="20" fill="#2c3e50" />
+
+    <!-- Barre de titre de l'écran -->
+    <rect x="70" y="70" width="660" height="30" rx="10" ry="10" fill="#34495e" />
+
+    <!-- Boutons de la barre de titre -->
+    <circle cx="90" cy="85" r="5" fill="#e74c3c" />
+    <circle cx="110" cy="85" r="5" fill="#f1c40f" />
+    <circle cx="130" cy="85" r="5" fill="#2ecc71" />
+
+    <!-- Lignes de code -->
+    <text x="100" y="130" font-family="monospace" font-size="16" fill="#ecf0f1">
+        <tspan x="100" dy="1.2em">function add(a, b) {</tspan>
+        <tspan x="120" dy="1.2em">  return a + b;</tspan>
+        <tspan x="100" dy="1.2em">}</tspan>
+        <tspan x="100" dy="1.2em">console.log(add(2, 3));</tspan>
+    </text>
+
+    <!-- Icône de code -->
+    <path
+            d="M400 500l-80-80 80-80m-200 160l80-80-80-80"
+            stroke="#3498db"
+            stroke-width="4"
+    />
+</svg>
