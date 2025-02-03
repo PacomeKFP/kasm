@@ -18,11 +18,7 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Internationalisation (optionnel)
-  i18n: {
-    defaultLocale: 'fr',
-    locales: ['fr', 'en'],
-  },
+
 
   presets: [
     [
@@ -87,10 +83,7 @@ const config: Config = {
               label: 'Introduction',
               to: '/docs/intro',
             },
-            {
-              label: 'Instructions',
-              to: '/docs/instructions',
-            },
+
           ],
         },
         {

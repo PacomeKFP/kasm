@@ -29,11 +29,7 @@ function HomepageHeader() {
                             to="/docs/intro">
                             Commencer avec KASM 🚀
                         </Link>
-                        <Link
-                            className="button button--outline button--lg"
-                            to="/docs/instructions">
-                            Voir les Instructions
-                        </Link>
+
                     </div>
                 </div>
                 <CodeIllustration className={styles.heroIllustration} />
