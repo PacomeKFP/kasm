@@ -27,12 +27,12 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-              'https://github.com/PacomeKFP/kasm/tree/main/', // Lien pour éditer les pages
+              'https://github.com/PacomeKFP/kasm/tree/doc/', // Lien pour éditer les pages
         },
         blog: {
           showReadingTime: true,
           editUrl:
-              'https://github.com/PacomeKFP/kasm/tree/main/', // Lien pour éditer les articles
+              'https://github.com/PacomeKFP/kasm/tree/doc/', // Lien pour éditer les articles
         },
         theme: {
           customCss: './src/css/custom.css',
