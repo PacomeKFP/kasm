@@ -21,27 +21,27 @@ Les opérations arithmétiques permettent de manipuler des valeurs numériques. 
 
 #### Addition
 ```asm
-ADD C, A, B      ; C = A + B
+ADD A, B, C      ; C = A + B
 ```
 
 #### Soustraction
 ```asm
-SUB D, X, #10    ; D = X - 10
+SUB X, #10, D    ; D = X - 10
 ```
 
 #### Multiplication
 ```asm
-MUL RES, A, B    ; RES = A * B
+MUL A, B,RES    ; RES = A * B
 ```
 
 #### Division
 ```asm
-DIV Q, A, B      ; Q = A / B
+DIV A, B, Q      ; Q = A / B
 ```
 
 #### Modulo
 ```asm
-MOD R, A, B      ; R = A % B
+MOD A, B, R      ; R = A % B
 ```
 
 ### Remarques
