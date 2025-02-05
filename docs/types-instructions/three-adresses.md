@@ -10,7 +10,7 @@ Le format **3 adresses** est le plus explicite et le plus facile à comprendre. 
 
 ### Syntaxe
 ```asm
-OP DESTINATION, SOURCE1, SOURCE2
+OP SOURCE1, SOURCE2, DESTINATION
 ```
 
 ### Caractéristiques
@@ -20,11 +20,11 @@ OP DESTINATION, SOURCE1, SOURCE2
 
 ### Exemples
 ```asm
-ADD C, A, B      ; C = A + B
-SUB D, X, #10    ; D = X - 10
-MUL RES, A, B    ; RES = A * B
-DIV Q, A, B      ; Q = A / B
-MOD R, A, B      ; R = A % B
+ADD A, B, C      ; C = A + B
+SUB X, #10,D    ; D = X - 10
+MUL A, B, RES    ; RES = A * B
+DIV A, B, Q      ; Q = A / B
+MOD A, B, R      ; R = A % B
 ```
 
 ### Avantages
