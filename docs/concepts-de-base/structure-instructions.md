@@ -23,6 +23,6 @@ Toute instruction suit ce pattern :
 
 Exemple complet :
 ```asm
-BOUCLE: SUB X, Y, #5  ; X = Y - 5
-        BR GT BOUCLE  ; Répéter si X > 0
+BOUCLE: SUB Y, #5, X ; X = Y - 5
+        BGT BOUCLE  ; Répéter si X > 0
 ```
