@@ -22,7 +22,7 @@ OP
 ```asm
 PUSH A      ; Empile A
 PUSH B      ; Empile B
-ADD         ; Dépile A et B, empile A + B
+ADD         ; POP A et Remplace B par A + B
 POP C       ; Dépile le résultat dans C
 ```
 
