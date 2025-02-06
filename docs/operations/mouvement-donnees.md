@@ -36,7 +36,7 @@ STORE C       ; C = Accumulateur
 ```asm
 PUSH A        ; Empile la valeur de A
 PUSH B        ; Empile la valeur de B
-ADD           ; Dépile A et B, empile A + B
+ADD           ; Dépile A et remplace B par A + B
 POP C         ; Dépile le résultat dans C
 ```
 
@@ -78,6 +78,6 @@ STORE Y        ; Y = Accumulateur
 ```asm
 PUSH #20       ; Empile 20
 PUSH #30       ; Empile 30
-ADD            ; Dépile 20 et 30, empile 50
+ADD            ; Dépile 20 et remplace 30 par 50
 POP RESULT     ; RESULT = 50
 ```
