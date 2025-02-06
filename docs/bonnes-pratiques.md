@@ -10,7 +10,7 @@ Ajoutez des commentaires pour expliquer les parties complexes de votre code.
 
 ```asm
 ; Calcul de la somme de A et B
-ADD C, A, B   ; C = A + B
+ADD A, B, C   ; C = A + B
 ```
 
 ### 2. Choisissez des noms significatifs
@@ -33,8 +33,8 @@ MOV A, A   ; Inutile, A reste inchangé
 Vérifiez toujours les conditions avant d'utiliser des branchements.
 
 ```asm
-COMPARE: SUB TMP, A, B
-         BR GT COMPARE, FIN   ; Saute si A > B
+COMPARE: SUB A, B, TMP
+         BGT COMPARE   ; Saute si A - B>0
 ```
 
 ### 5. Utilisez des étiquettes claires
@@ -42,7 +42,7 @@ Nommez vos étiquettes de manière descriptive.
 
 ```asm
 DEBUT_BOUCLE: ADD A, B
-              BR GT DEBUT_BOUCLE, FIN_BOUCLE
+              BGT DEBUT_BOUCLE
 ```
 
 ### 6. Gérez la pile avec soin
@@ -81,10 +81,10 @@ MOV A, #10      ; A = 10
 MOV B, #20      ; B = 20
 
 ; Calcul de la somme
-ADD TOTAL, A, B ; TOTAL = A + B
+ADD A, B, TOTAL ; TOTAL = A + B
 
 ; Calcul de la moyenne
-DIV MOYENNE, TOTAL, #2  ; MOYENNE = TOTAL / 2
+DIV TOTAL, #2, MOYENNE  ; MOYENNE = TOTAL / 2
 
 ; Affichage du résultat (simulé)
 HALT
