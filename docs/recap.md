@@ -45,7 +45,7 @@ All instructions follow this format:
   - Compute `DEST = SRC1 OP SRC2`.
 - **Example**:  
   ```asm
-  ADD C, A, B   ; C = A + B
+  ADD A, B,C   ; C = A + B
   ```
 
 ### 4.2. 2-Address Instructions
@@ -94,13 +94,13 @@ All instructions follow this format:
   ```
 
 ### 5.2. Conditional Branch
-- **Format**: `BR COND TRUE_LABEL, FALSE_LABEL`  
-  - Jump to `TRUE_LABEL` if `COND` is met, else jump to `FALSE_LABEL`.
+- **Format**: `débranchement_conditionnel LABEL`  
+  - Jump to `LABEL` if `COND` is met, else continue execution.
   - Supported conditions:  
-    `EQ` (equal), `NE` (not equal), `GT` (greater than), `LT` (less than).
+    `BEZ` (equal), `BGE` (greater than or equal), `BGT` (greater than), `BLT` (less than), `BLE` (less than or equal).
 - **Example**:  
   ```asm
-  BR EQ LOOP, EXIT   ; Jump to LOOP if equal, else EXIT
+  BEZ LOOP   ; Jump to LOOP if equal, continue
   ```
 
 ---
@@ -109,9 +109,9 @@ All instructions follow this format:
 - A program must use **only one instruction type** (e.g., all 3-address or all stack-based).
 - **Example (3-address)**:  
   ```asm
-  START: ADD C, A, B   ; C = A + B
-         SUB D, C, #5  ; D = C - 5 (assuming #5 is an immediate value)
-         BR GT START, END
+  START: ADD A, B, C   ; C = A + B
+         SUB C, #5, D  ; D = C - 5 (assuming #5 is an immediate value)
+         BGT START
   END:   HALT
   ```
 
@@ -122,11 +122,11 @@ All instructions follow this format:
 ### 7.1. Arithmetic Instructions
 | Instruction | Description                          | Example                     |
 |-------------|--------------------------------------|-----------------------------|
-| `ADD`       | Addition                             | `ADD C, A, B`  ; C = A + B  |
-| `SUB`       | Subtraction                          | `SUB C, A, B`  ; C = A - B  |
-| `MUL`       | Multiplication                       | `MUL C, A, B`  ; C = A * B  |
-| `DIV`       | Integer Division                     | `DIV C, A, B`  ; C = A / B  |
-| `MOD`       | Modulo (Remainder)                   | `MOD C, A, B`  ; C = A % B  |
+| `ADD`       | Addition                             | `ADD A, B, C`  ; C = A + B  |
+| `SUB`       | Subtraction                          | `SUB A, B, C`  ; C = A - B  |
+| `MUL`       | Multiplication                       | `MUL A, B, C`  ; C = A * B  |
+| `DIV`       | Integer Division                     | `DIV A, B, C`  ; C = A / B  |
+| `MOD`       | Modulo (Remainder)                   | `MOD A, B, C`  ; C = A % B  |
 
 ### 7.2. Data Movement Instructions
 | Instruction | Description                          | Example                     |
@@ -141,7 +141,7 @@ All instructions follow this format:
 | Instruction | Description                          | Example                     |
 |-------------|--------------------------------------|-----------------------------|
 | `BR`        | Unconditional branch (jump)          | `BR LOOP`      ; Jump to LOOP |
-| `BR COND`   | Conditional branch                   | `BR EQ LOOP, EXIT` ; Jump to LOOP if equal, else EXIT |
+| `BR COND`   | Conditional branch                   | `BEZ LOOP` ; Jump to LOOP if equal, else continue |
 | `HALT`      | Stop program execution               | `HALT`          ; End program |
 
 ### 7.4. Stack Operations
@@ -174,14 +174,13 @@ All instructions follow this format:
 ### 7.7. Conditional Flags
 These are used with conditional branching (`BR COND`).
 
-| Condition | Description                          |
-|-----------|--------------------------------------|
-| `EQ`      | Equal to                             |
-| `NE`      | Not equal to                         |
-| `GT`      | Greater than                         |
-| `LT`      | Less than                            |
-| `GE`      | Greater than or equal to             |
-| `LE`      | Less than or equal to                |
+| Condition  | Description                          |
+|------------|--------------------------------------|
+| `BEZ`      | Equal to                             |
+| `BGT`      | Greater than                         |
+| `BLT`      | Less than                            |
+| `BGE`      | Greater than or equal to             |
+| `BLE`      | Less than or equal to                |
 
 ---
 
@@ -191,9 +190,9 @@ These are used with conditional branching (`BR COND`).
 ```asm
 START:  MOV A, #10       ; A = 10
         MOV B, #5        ; B = 5
-        ADD C, A, B      ; C = A + B (15)
-        SUB D, C, #3     ; D = C - 3 (12)
-        BR GT START, END ; If D > 0, jump to START
+        ADD A, B, C      ; C = A + B (15)
+        SUB C, #3, D     ; D = C - 3 (12)
+        BGT START        ; If D > 0
 END:    HALT             ; Stop program
 ```
 
