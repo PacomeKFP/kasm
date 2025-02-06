@@ -12,7 +12,11 @@ Le contrôle de flux permet de modifier l'ordre d'exécution des instructions en
 | Instruction | Description                              |
 |-------------|------------------------------------------|
 | `BR`        | Saut inconditionnel                      |
-| `BR COND`   | Saut conditionnel                        |
+| `BEZ`       | Saut conditionnel                        |
+| `BGE`       | Saut conditionnel                        |
+| `BGT`       | Saut conditionnel                        |
+| `BLE`       | Saut conditionnel                        |
+| `BLT`       | Saut conditionnel                        |
 | `HALT`      | Arrête l'exécution du programme          |
 
 ### Saut inconditionnel (`BR`)
@@ -22,34 +26,31 @@ Saute directement à une étiquette spécifiée.
 ```asm
 BR ETIQUETTE
 ```
-
 #### Exemple
 ```asm
 DEBUT: ADD A, B, C
        BR DEBUT   ; Répète indéfiniment
 ```
 
-### Saut conditionnel (`BR COND`)
+### Saut conditionnel 
 Saute à une étiquette si une condition est remplie.
 
 #### Syntaxe
 ```asm
-BR COND ETIQUETTE_VRAI, ETIQUETTE_FAUX
+instruction ETIQUETTE
 ```
 
-#### Conditions disponibles
-- `EQ` : Égal à
-- `NE` : Différent de
-- `GT` : Plus grand que
-- `LT` : Plus petit que
-- `GE` : Plus grand ou égal à
-- `LE` : Plus petit ou égal à
+#### Debrachements disponibles
+- `BEZ` : Si le résultat est égale à zéro
+- `BGT` : Si le résultat est supérieur à zéro
+- `BLT` : Si le résultat est inférieur à zéro
+- `BGE` : Si le résultat est supérieur ou égale à zéro
+- `BLE` : Si le résultat est inférieur ou égale à zéro
 
 #### Exemple
 ```asm
-COMPARE: SUB TMP, A, B
-         BR GT COMPARE, FIN   ; Si A > B, saute à COMPARE
-FIN: HALT
+COMPARE: SUB A, B, TMP
+         BGT COMPARE   ; Si A > B, Débranche à COMPARE
 ```
 
 ### Arrêt du programme (`HALT`)
