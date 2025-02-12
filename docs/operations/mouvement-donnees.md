@@ -11,7 +11,7 @@ Les instructions de mouvement de données permettent de copier ou de déplacer d
 
 | Instruction | Description                              |
 |-------------|------------------------------------------|
-| `MOV`       | Copie une valeur dans une adresse        |
+| `MOV*`       | Copie une valeur dans une adresse        |
 | `LOAD`      | Charge une valeur dans l'accumulateur    |
 | `STORE`     | Stocke la valeur de l'accumulateur       |
 | `PUSH`      | Empile une valeur sur la pile            |
@@ -19,10 +19,10 @@ Les instructions de mouvement de données permettent de copier ou de déplacer d
 
 ### Exemples
 
-#### `MOV` (Copie)
+#### `MOV*` (Copie)
 ```asm
-MOV A, B      ; Copie la valeur de B dans A
-MOV X, #10    ; Stocke la valeur 10 dans X
+MOV* A, B      ; Copie la valeur de B dans A
+MOV* X, #10    ; Stocke la valeur 10 dans X
 ```
 
 #### `LOAD` et `STORE` (Accumulateur)
@@ -41,7 +41,7 @@ POP C         ; Dépile le résultat dans C
 ```
 
 ### Remarques
-- `MOV` ne modifie pas la source.
+- `MOV*` ne modifie pas la source.
 - `LOAD` et `STORE` sont utilisés avec le format 1 adresse.
 - `PUSH` et `POP` sont utilisés avec le format 0 adresse (pile).
 
@@ -51,7 +51,7 @@ POP C         ; Dépile le résultat dans C
 
 | Instruction | Utilisation                  | Format supporté       |
 |-------------|------------------------------|-----------------------|
-| `MOV`       | Copie simple                 | 2 et 3 adresses       |
+| `MOV*`       | Copie simple                 | 2 et 3 adresses       |
 | `LOAD`      | Charge dans l'accumulateur   | 1 adresse             |
 | `STORE`     | Stocke depuis l'accumulateur | 1 adresse             |
 | `PUSH`      | Empile une valeur            | 0 adresse (pile)      |
@@ -63,8 +63,8 @@ POP C         ; Dépile le résultat dans C
 
 #### Utilisation de `MOV`
 ```asm
-MOV A, #5      ; A = 5
-MOV B, A       ; B = A (B = 5)
+MOV* A, #5      ; A = 5
+MOV* B, A       ; B = A (B = 5)
 ```
 
 #### Utilisation de `LOAD` et `STORE`
