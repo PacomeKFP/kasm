@@ -15,7 +15,7 @@ Les opérations arithmétiques permettent de manipuler des valeurs numériques. 
 | Soustraction | `SUB` | Soustrait une valeur d'une autre |
 | Multiplication | `MUL` | Multiplie deux valeurs          |
 | Division  | `DIV`   | Divise une valeur par une autre |
-| Modulo    | `MOD`   | Donne le reste d'une division   |
+| Modulo    | `MOD*`   | Donne le reste d'une division   |
 
 ### Exemples
 
@@ -41,7 +41,7 @@ DIV A, B, Q      ; Q = A / B
 
 #### Modulo
 ```asm
-MOD A, B, R      ; R = A % B
+MOD* A, B, R      ; R = A % B
 ```
 
 ### Remarques
