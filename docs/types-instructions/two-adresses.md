@@ -15,7 +15,7 @@ OP DESTINATION, SOURCE
 
 ### Caractéristiques
 - **DESTINATION** : Où le résultat est stocké (et aussi l'une des sources).
-- **SOURCE** : La deuxième valeur utilisée pour l'opération.
+- **SOURCE** : La deuxième valeur utilisée pour l'opération. Celle ci représente la deuxième operande nécessaire à l'opération ( Les opérations étant binaire).
 - La destination est modifiée après l'opération.
 
 ### Exemples
