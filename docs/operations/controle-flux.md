@@ -17,7 +17,7 @@ Le contrôle de flux permet de modifier l'ordre d'exécution des instructions en
 | `BGT`       | Saut conditionnel                        |
 | `BLE`       | Saut conditionnel                        |
 | `BLT`       | Saut conditionnel                        |
-| `HALT`      | Arrête l'exécution du programme          |
+| `STOP`      | Arrête l'exécution du programme          |
 
 ### Saut inconditionnel (`BR`)
 Saute directement à une étiquette spécifiée.
@@ -53,10 +53,10 @@ COMPARE: SUB A, B, TMP
          BGT COMPARE   ; Si A > B, Débranche à COMPARE
 ```
 
-### Arrêt du programme (`HALT`)
+### Arrêt du programme (`STOP`)
 Termine l'exécution du programme.
 
 #### Exemple
 ```asm
-HALT   ; Arrête le programme
+STOP   ; Arrête le programme
 ```
