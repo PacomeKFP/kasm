@@ -27,8 +27,8 @@ POP C       ; Dépile le résultat dans C
 ```
 
 ### Commandes spéciales
-- `DUP` : Duplique le sommet de la pile.
-- `SWAP` : Échange les deux éléments du sommet de la pile.
+- `DUP*` : Duplique le sommet de la pile.
+- `SWAP*` : Échange les deux éléments du sommet de la pile.
 
 ### Avantages
 - Très compact.
