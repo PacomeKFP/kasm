@@ -24,7 +24,7 @@ ADD A, B, C      ; C = A + B
 SUB X, #10,D    ; D = X - 10
 MUL A, B, RES    ; RES = A * B
 DIV A, B, Q      ; Q = A / B
-MOD A, B, R      ; R = A % B
+MOD* A, B, R      ; R = A % B
 ```
 
 ### Avantages
